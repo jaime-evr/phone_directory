@@ -36,5 +36,37 @@ RSpec.describe ContactsController do
       expect(assigns(:contact)).to be_a_new(Contact)
     end
   end
+
+  describe 'POST create' do
+    context 'when valid attributes' do
+      let(:contact) { FactoryGirl.attributes_for(:contact) }
+
+      it 'should create a new contact' do
+        expect {
+          post :create, contact: contact
+        }.to change(Contact, :count).by(1)
+      end
+
+      it 'should redirect to the contact page' do
+        post :create, contact: contact
+        expect(response).to redirect_to(Contact.last)
+      end
+    end
+
+    context 'when invalid attributes' do
+      let(:contact) { FactoryGirl.attributes_for(:contact, name: nil) }
+
+      it 'should not create a new contact' do
+        expect {
+          post :create, contact: contact
+        }.to_not change(Contact, :count)
+      end
+
+      it 'should render the new template' do
+        post :create, contact: contact
+        expect(response).to render_template(:new)
+      end
+    end
+  end
 end
 

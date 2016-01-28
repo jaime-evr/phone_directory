@@ -24,6 +24,10 @@ RSpec.describe ContactsController do
       expect(assigns(:contact)).to eq(contact)
     end
 
+    it 'should come with an an address' do
+      expect(assigns(:contact).address).to eq(contact.address)
+    end
+
     it 'should render the show template' do
       expect(response).to render_template(:show)
     end

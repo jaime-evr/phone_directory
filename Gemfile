@@ -13,6 +13,7 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'quiet_assets'
 end

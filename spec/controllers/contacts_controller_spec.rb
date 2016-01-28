@@ -28,5 +28,13 @@ RSpec.describe ContactsController do
       expect(response).to render_template(:show)
     end
   end
+
+  describe 'GET new' do
+    before { get :new }
+
+    it 'should build a new contact' do
+      expect(assigns(:contact)).to be_a_new(Contact)
+    end
+  end
 end
 

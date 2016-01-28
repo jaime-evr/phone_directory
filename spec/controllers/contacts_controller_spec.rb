@@ -20,7 +20,7 @@ RSpec.describe ContactsController do
 
     before { get :show, id: contact }
 
-    it 'should return the requested contact' do
+    it 'should find the requested contact' do
       expect(assigns(:contact)).to eq(contact)
     end
 
@@ -29,11 +29,29 @@ RSpec.describe ContactsController do
     end
   end
 
+  describe 'GET edit' do
+    let(:contact) { FactoryGirl.create(:contact) }
+
+    before { get :edit, id: contact }
+
+    it 'should find the requested contact' do
+      expect(assigns(:contact)).to eq(contact)
+    end
+
+    it 'should render the edit template' do
+      expect(response).to render_template(:edit)
+    end
+  end
+
   describe 'GET new' do
     before { get :new }
 
     it 'should build a new contact' do
       expect(assigns(:contact)).to be_a_new(Contact)
+    end
+
+    it 'should render the new template' do
+      expect(response).to render_template(:new)
     end
   end
 
@@ -65,6 +83,44 @@ RSpec.describe ContactsController do
       it 'should render the new template' do
         post :create, contact: contact
         expect(response).to render_template(:new)
+      end
+    end
+  end
+
+  describe 'POST update' do
+    let(:contact) { FactoryGirl.create(:contact, name: 'Jhon', last_name: 'Doe') }
+
+    context 'with valid attributes' do
+      before do
+        put :update, id: contact, contact: FactoryGirl.attributes_for(:contact)
+        contact.reload
+      end
+
+      it 'should locate the requested contact' do
+        expect(assigns(:contact)).to eq(contact)
+      end
+
+      context 'should update the contact attributes' do
+        it { expect(contact.name).to eq('Contact') }
+        it { expect(contact.last_name).to eq('User') }
+      end
+    end
+
+    context 'with invalid attributes' do
+      let(:contact) { FactoryGirl.create(:contact, name: 'Jhon', last_name: 'Doe') }
+
+      before do
+        put :update, id: contact, contact: FactoryGirl.attributes_for(:contact, name: nil, last_name: nil)
+        contact.reload
+      end
+
+      it 'should locate the requested contact' do
+        expect(assigns(:contact)).to eq(contact)
+      end
+
+      context 'should not change the contact attributes' do
+        it { expect(contact.name).to eq('Jhon') }
+        it { expect(contact.last_name).to eq('Doe') }
       end
     end
   end

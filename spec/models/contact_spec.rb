@@ -1,15 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Contact, type: :model do
-  context "it's invalid without a name" do
-    let(:contact) { FactoryGirl.build(:contact, name: nil) }
-
-    it { expect(contact).to_not be_valid }
+  context "validates required attributes" do
+    it { is_expected.to validate_presence_of(:name) }
+    it { is_expected.to validate_presence_of(:last_name) }
   end
 
-  context "it's invalid without a last name" do
-    let(:contact) { FactoryGirl.build(:contact, last_name: nil) }
-
-    it { expect(contact).to_not be_valid }
+  context 'validates relations' do
+    it { is_expected.to have_one(:address).dependent(:destroy) }
+    it { is_expected.to have_many(:phones).dependent(:destroy) }
   end
 end

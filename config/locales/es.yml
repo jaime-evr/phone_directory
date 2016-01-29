@@ -9,6 +9,7 @@ es:
     delete: Eliminar
     list: Lista de contactos
     last_name: Apellido(s)
+    address: Dirección
   address:
     address1: Calle
     address2: Colonia

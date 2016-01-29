@@ -8,6 +8,7 @@
       <%= form.text_area :bio, placeholder: t('contact.bio'), class: 'pure-input-1' %>
     </fieldset>
 
+    <h3><%= t('contact.address') %></h3>
     <fieldset class="pure-group">
       <%= form.fields_for :address do |address_form| %>
         <%= address_form.text_field :address1, placeholder: t('address.address1'), class: 'pure-input-1', required: true %>
@@ -24,6 +25,7 @@
       <% end %>
     </fieldset>
 
+    <h3><%= t('phone.numbers') %></h3>
     <fieldset class="pure-group">
       <%= form.fields_for :phones do |phones_form| %>
         <%= phones_form.text_field :number, type: 'number', placeholder: t('phone.number'), class: 'pure-input-1', required: true %>

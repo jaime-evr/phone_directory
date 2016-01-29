@@ -9,6 +9,7 @@ en:
     delete: Delete
     list: Contacts list
     last_name: Last name
+    address: Address
   address:
     address1: Address
     address2: Address (continuation)

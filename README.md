@@ -1,11 +1,19 @@
 ## Phone directory exercise
 
-Instructions:
-> Create a rails a application: A phone directory where you can store
-> multiple phone numbers by person and just one address.
+Small phone directory application where you can:
 
+- Store multiple phone numbers by person and one address.
 - Display the complete directory.
 - Perform search by name and last name.
-- The application must be localizable (i18n).
-- OPTIONAL: add a small bio on each person and make it localizable
-  (globalize).
+- The application is localizable (i18n).
+- The bio on each contact uses globalize to make it localizable.
+
+### Run all tests
+
+```
+  bundle exec rspec spec/
+```
+
+### Demo
+
+See the [Demo](https://phonedirectory.herokuapp.com)

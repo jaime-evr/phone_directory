@@ -18,3 +18,6 @@ es:
     zip_code: Código Postal
   phone:
     number: Número
+    numbers: Números telefónicos
+    add: Añadir número de teléfono
+    create: Crear número

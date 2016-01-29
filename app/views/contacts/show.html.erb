@@ -7,6 +7,19 @@
 
       <%= render @contact.address %>
 
+      <h3><%= t('phone.numbers') %></h3>
+
+      <%= render @contact.phones %>
+
+      <h3<%= t('phone.add') %></h3>
+
+      <%= form_for(@contact, html: { class: 'pure-form' }, method: :put) do |form| %>
+        <fieldset>
+          <%= text_field_tag 'contact[phones_attributes][0][number]', nil, type: 'number', placeholder: t('phone.number'), required: true %>
+          <%= form.submit t('phone.create'), class: 'button-success pure-button' %>
+        </fieldset>
+      <% end %>
+
       <div class="form-actions">
         <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>
         <%= link_to t('contact.delete'), contact_path(@contact), method: :delete, class: 'button-error pure-button' %>

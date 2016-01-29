@@ -7,6 +7,8 @@ class Contact < ActiveRecord::Base
   accepts_nested_attributes_for :address
   accepts_nested_attributes_for :phones
 
+  translates :bio
+
   def to_s
     "#{name} #{last_name}"
   end

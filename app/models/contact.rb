@@ -5,6 +5,7 @@ class Contact < ActiveRecord::Base
   validates :name, :last_name, presence: true
 
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :phones
 
   def to_s
     "#{name} #{last_name}"

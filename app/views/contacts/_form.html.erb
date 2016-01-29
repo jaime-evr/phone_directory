@@ -23,9 +23,16 @@
         <%= address_form.text_field :zip_code, placeholder: t('address.zip_code'), class: 'pure-input-1', required: true %>
       <% end %>
     </fieldset>
+
+    <fieldset class="pure-group">
+      <%= form.fields_for :phones do |phones_form| %>
+        <%= phones_form.text_field :number, type: 'number', placeholder: t('phone.number'), class: 'pure-input-1', required: true %>
+      <% end %>
+    </fieldset>
+
     <div class="form-actions">
       <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>
-      <%= form.submit t('contact.create'), class: 'pure-button pure-button-primary' %> 
+      <%= form.submit t('contact.create'), class: 'pure-button pure-button-primary' %>
     </div>
   </div>
 <% end %>

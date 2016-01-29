@@ -1,0 +1,7 @@
+<div class="pure-menu pure-menu-horizontal">
+  <%= link_to t(:app_name), contacts_path, class: 'pure-menu-heading pure-menu-link' %>
+  <ul class="pure-menu-list right">
+    <li class="pure-menu-item"><%= link_to t(:spanish), url_for(locale: 'es'), class: 'pure-menu-link' %></li>
+    <li class="pure-menu-item"><%= link_to t(:english), url_for(locale: 'en'), class: 'pure-menu-link' %></li>
+  </ul>
+</div>

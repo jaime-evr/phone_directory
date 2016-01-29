@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
   root 'contacts#index'
-  resources 'contacts'
+
+  scope '(:locale)', locale: /en|es/, defaults: { locale: 'en' } do
+    resources 'contacts'
+  end
 end

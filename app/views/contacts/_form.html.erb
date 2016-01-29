@@ -1,0 +1,31 @@
+<%= form_for(@contact, html: { class: 'pure-form' }) do |form| %>
+  <div class="pure-u-1">
+    <fieldset class="pure-group">
+      <%= form.text_field :name, placeholder: t('contact.name'), class: 'pure-input-1', required: true %>
+
+      <%= form.text_field :last_name, placeholder: t('contact.last_name'), class: 'pure-input-1', required: true %>
+
+      <%= form.text_area :bio, placeholder: t('contact.bio'), class: 'pure-input-1' %>
+    </fieldset>
+
+    <fieldset class="pure-group">
+      <%= form.fields_for :address do |address_form| %>
+        <%= address_form.text_field :address1, placeholder: t('address.address1'), class: 'pure-input-1', required: true %>
+
+        <%= address_form.text_field :address2, placeholder: t('address.address2'), class: 'pure-input-1' %>
+
+        <%= address_form.text_field :city, placeholder: t('address.city'), class: 'pure-input-1', required: true %>
+
+        <%= address_form.text_field :state, placeholder: t('address.state'), class: 'pure-input-1', required: true %>
+
+        <%= address_form.text_field :country, placeholder: t('address.country'), class: 'pure-input-1', required: true %>
+
+        <%= address_form.text_field :zip_code, placeholder: t('address.zip_code'), class: 'pure-input-1', required: true %>
+      <% end %>
+    </fieldset>
+    <div class="form-actions">
+      <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>
+      <%= form.submit t('contact.create'), class: 'pure-button pure-button-primary' %> 
+    </div>
+  </div>
+<% end %>

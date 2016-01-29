@@ -3,22 +3,28 @@
     <div class="container">
       <h2><%= @contact %></h2>
 
-      <p><%= @contact.try(:bio) %></p>
+      <div class="well">
+        <%= form_for(@contact, html: { class: 'pure-form' }, method: :put) do |form| %>
+          <fieldset>
+            <%= text_field_tag 'contact[phones_attributes][0][number]', nil, type: 'number', placeholder: t('phone.number'), required: true %>
+            <%= form.submit t('phone.create'), class: 'button-success pure-button' %>
+          </fieldset>
+        <% end %>
+      </div>
 
-      <%= render @contact.address %>
+      <div class="well">
+        <p class="center"><%= @contact.try(:bio) %></p>
+      </div>
 
-      <h3><%= t('phone.numbers') %></h3>
+      <div class="well">
+        <h3 class="center"><%= t('contact.address') %></h3>
+        <%= render @contact.address %>
+      </div>
 
-      <%= render @contact.phones %>
-
-      <h3<%= t('phone.add') %></h3>
-
-      <%= form_for(@contact, html: { class: 'pure-form' }, method: :put) do |form| %>
-        <fieldset>
-          <%= text_field_tag 'contact[phones_attributes][0][number]', nil, type: 'number', placeholder: t('phone.number'), required: true %>
-          <%= form.submit t('phone.create'), class: 'button-success pure-button' %>
-        </fieldset>
-      <% end %>
+      <div class="well">
+        <h3 class="center"><%= t('phone.numbers') %></h3>
+        <%= render @contact.phones %>
+      </div>
 
       <div class="form-actions">
         <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>

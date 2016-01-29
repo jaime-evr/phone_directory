@@ -16,3 +16,5 @@ en:
     state: State
     country: Country
     zip_code: Zip code
+  phone:
+    number: Number

@@ -16,3 +16,5 @@ es:
     state: Estado
     country: Pais
     zip_code: Código Postal
+  phone:
+    number: Número

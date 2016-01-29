@@ -1,0 +1,17 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <div class="container">
+      <h2><%= @contact %></h2>
+
+      <p><%= @contact.try(:bio) %></p>
+
+      <%= render @contact.address %>
+
+      <div class="form-actions">
+        <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>
+        <%= link_to t('contact.delete'), contact_path(@contact), method: :delete, class: 'button-error pure-button' %>
+        <%= link_to t('contact.edit'), edit_contact_path(@contact), class: 'pure-button pure-button-primary' %>
+      </div>
+    </div>
+  </div>
+</div>

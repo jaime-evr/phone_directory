@@ -89,6 +89,20 @@ RSpec.describe ContactsController do
         expect(response).to render_template(:new)
       end
     end
+
+    context 'when sending address attributes' do
+      let(:contact_with_address) do
+        FactoryGirl.attributes_for(:contact,
+          address_attributes: FactoryGirl.attributes_for(:address)
+        )
+      end
+
+      it 'should save the contact address' do
+        expect {
+          post :create, contact: contact_with_address
+        }.to change(Address, :count).by(1)
+      end
+    end
   end
 
   describe 'POST update' do

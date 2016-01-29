@@ -1,0 +1,16 @@
+es:
+  app_title: Directorio de teléfonos
+  contact:
+    bio: Biografía
+    create: Crear contacto
+    name: Nombre(s)
+    new: Nuevo contacto
+    list: Lista de contactos
+    last_name: Apellido(s)
+  address:
+    address1: Calle
+    address2: Colonia
+    city: Cuidad
+    state: Estado
+    country: Pais
+    zip_code: Código Postal

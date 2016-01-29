@@ -2,13 +2,13 @@ en:
   app_title: Phone directory
   search: Search
   save: Save
+  edit: Edit
+  delete: Delete
   contact:
     bio: Biography
     create: Create contact
     name: Name
     new: New contact
-    edit: Edit
-    delete: Delete
     list: Contacts list
     last_name: Last name
     address: Address

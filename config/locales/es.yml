@@ -2,13 +2,13 @@ es:
   app_title: Directorio telefónico
   search: Buscar
   save: Guardar
+  edit: Editar
+  delete: Eliminar
   contact:
     bio: Biografía
     create: Crear contacto
     name: Nombre(s)
     new: Nuevo contacto
-    edit: Editar
-    delete: Eliminar
     list: Lista de contactos
     last_name: Apellido(s)
     address: Dirección

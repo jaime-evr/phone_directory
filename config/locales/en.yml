@@ -5,6 +5,8 @@ en:
     create: Create contact
     name: Name
     new: New contact
+    edit: Edit
+    delete: Delete
     list: Contacts list
     last_name: Last name
   address:

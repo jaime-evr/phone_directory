@@ -1,0 +1,15 @@
+<div class="pure-g">
+  <div class="pure-u-1">
+    <div class="container">
+      <h2><%= t(:app_title) %></h2>
+
+      <%= link_to t('contact.new'), new_contact_path, class: 'pure-button large__btn pure-button-primary' %>
+
+      <h3><%= t('contact.list') %></h2>
+
+      <% @contacts.each do |contact| %>
+        <%= link_to contact, contact_path(contact), class: 'pure-button large__btn' %></li>
+      <% end %>
+    </div>
+  </div>
+</div>

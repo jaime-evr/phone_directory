@@ -1,0 +1,26 @@
+@mixin border-radius($border) {
+  -webkit-border-radius: $border;
+  -moz-border-radius: $border;
+  border-radius: $border;
+}
+
+.form-actions {
+  float: right;
+  margin-top: 10px;
+}
+
+.container {
+  @include border-radius(5px);
+  background-color: #EEF1E3;
+  margin: 10px auto;
+  padding: 20px;
+  width: 360px;
+  min-height: 600px;
+}
+
+.large__btn {
+  display: block;
+  margin: 3px 0;
+  width: 100%;
+}
+

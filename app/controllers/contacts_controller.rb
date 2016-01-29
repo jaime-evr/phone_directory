@@ -2,7 +2,8 @@ class ContactsController < ApplicationController
   before_action :set_contact, only: [:destroy, :show, :update, :edit]
 
   def index
-    @contacts = Contact.all
+    @q = Contact.ransack(params[:q])
+    @contacts = @q.result(distinct: true)
   end
 
   def new

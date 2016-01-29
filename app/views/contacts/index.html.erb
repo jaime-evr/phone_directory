@@ -1,11 +1,13 @@
 <div class="pure-g">
   <div class="pure-u-1">
     <div class="container">
-      <h2><%= t(:app_title) %></h2>
 
-      <%= link_to t('contact.new'), new_contact_path, class: 'pure-button large__btn pure-button-primary' %>
+      <%= search_form_for @q, class: 'pure-form' do |f| %>
+        <%= f.text_field :name_or_last_name_cont, class: 'pure-input-1', placeholder: t(:search) %>
+      <% end %>
 
       <h3><%= t('contact.list') %></h2>
+      <%= link_to t('contact.new'), new_contact_path, class: 'pure-button large__btn pure-button-primary' %>
 
       <% @contacts.each do |contact| %>
         <%= link_to contact, contact_path(contact), class: 'pure-button large__btn' %></li>

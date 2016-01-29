@@ -142,5 +142,20 @@ RSpec.describe ContactsController do
       end
     end
   end
+
+  describe 'DELETE destroy' do
+    let!(:contact) { FactoryGirl.create(:contact) }
+
+    it 'should delete the contact' do
+      expect{
+        delete :destroy, id: contact
+      }.to change(Contact,:count).by(-1)
+    end
+
+    it 'should redirect to the contacts page' do
+      delete :destroy, id: contact
+      expect(response).to redirect_to(contacts_path)
+    end
+  end
 end
 

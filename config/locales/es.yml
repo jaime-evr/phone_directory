@@ -1,6 +1,7 @@
 es:
   app_title: Directorio telefónico
   search: Buscar
+  save: Guardar
   contact:
     bio: Biografía
     create: Crear contacto

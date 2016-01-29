@@ -1,6 +1,7 @@
 en:
   app_title: Phone directory
   search: Search
+  save: Save
   contact:
     bio: Biography
     create: Create contact

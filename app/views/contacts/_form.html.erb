@@ -25,16 +25,9 @@
       <% end %>
     </fieldset>
 
-    <h3><%= t('phone.numbers') %></h3>
-    <fieldset class="pure-group">
-      <%= form.fields_for :phones do |phones_form| %>
-        <%= phones_form.text_field :number, placeholder: t('phone.number'), class: 'pure-input-1', required: true %>
-      <% end %>
-    </fieldset>
-
     <div class="form-actions">
       <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>
-      <%= form.submit t('save'), class: 'pure-button pure-button-primary' %>
+      <%= form.submit t(:save), class: 'pure-button pure-button-primary' %>
     </div>
   </div>
 <% end %>

@@ -1,1 +1,4 @@
-<span><strong><%= t('phone.number') %></strong>: <%= phone.number %></span><br/>
+<span><strong><%= t('phone.number') %></strong>: <%= phone.number %></span>
+<%= link_to t(:edit), edit_phone_path(phone) %> |
+<%= link_to t(:delete), phone_path(phone), method: :delete %><br/>
+

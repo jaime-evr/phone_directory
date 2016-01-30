@@ -1,0 +1,12 @@
+<%= form_for(@phone, html: { class: 'pure-form' }) do |form| %>
+  <div class="pure-u-1">
+    <fieldset class="pure-group">
+      <%= form.text_field :number, placeholder: t('phone.number'), class: 'pure-input-1', required: true %>
+    </fieldset>
+
+    <div class="form-actions">
+      <%= link_to t('contact.list'), contacts_path, class: 'pure-button' %>
+      <%= form.submit t(:save), class: 'pure-button pure-button-primary' %>
+    </div>
+  </div>
+<% end %>
